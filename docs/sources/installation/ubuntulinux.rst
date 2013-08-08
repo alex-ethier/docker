@@ -44,6 +44,17 @@ Due to a bug in LXC docker works best on the 3.8 kernel. Precise comes with a 3.
    sudo reboot
 
 
+You may have to add the new kernel to /boot/grub/menu.lst.
+
+
+.. code-block:: bash
+
+   # vim /boot/grub/menu.lst
+   title           Ubuntu 12.04 LTS, kernel 3.8.0-27-generic
+   root            (hd0)
+   kernel          /boot/vmlinuz-3.8.0-27-generic root=LABEL=cloudimg-rootfs ro console=hvc0
+   initrd          /boot/initrd.img-3.8.0-27-generic
+
 Installation
 ------------
 
